@@ -30,3 +30,18 @@ function render() {
     $temp.text(`Temperature: ${tempNow} F`)
     $location.text(`Weather For: ${userInput}`)
 }
+
+function apply() {
+    $.ajax({
+        url: `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=8f795061fa1c7a09f92221bad59a9faa`
+    }).then(
+        (dataW) => {
+            mainWeather = dataW['weather'][0]['main']
+            feelsLike = Math.round((((dataW['main']['feels_like'])- 273.15) * 9/5 + 32))
+            tempNow = Math.round((((dataW['main']['temp']) - 273.15) * 9/5 +32))
+
+            render()
+
+        }
+    )
+}

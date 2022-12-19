@@ -37,8 +37,8 @@ function apply() {
     }).then(
         (dataW) => {
             mainWeather = dataW['weather'][0]['main']
-            feelsLike = Math.round((((dataW['main']['feels_like']) - 273.15) * 9 / 5 + 32))
-            tempNow = Math.round((((dataW['main']['temp']) - 273.15) * 9 / 5 + 32))
+            feelsLike = Math.round((((dataW['main']['feels_like'])- 273.15) * 9/5 + 32))
+            tempNow = Math.round((((dataW['main']['temp']) - 273.15) * 9/5 +32))
 
             render()
 

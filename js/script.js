@@ -23,3 +23,10 @@ function handleGetData(event) {
         }
     )
 }
+
+function render() {
+    $weather.text(`Weather: ${mainWeather}`)
+    $feels.text(`Feels Like: ${feelsLike} F`)
+    $temp.text(`Temperature: ${tempNow} F`)
+    $location.text(`Weather For: ${userInput}`)
+}
